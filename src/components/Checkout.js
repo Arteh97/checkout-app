@@ -1,18 +1,21 @@
 import { useState } from "react";
 import React from 'react'
+import { calculateTotal } from '../utils/calculateTotal';
 
-const Checkout = () => {
+const Checkout = ({ pricingRules }) => {
     const [basket, setBasket] = useState([]);
     const [total, setTotal] = useState(0);
 
     const addItem = (item) => {
         setBasket([...basket, item]);
+        setTotal(calculateTotal([...basket, item]), pricingRules);
       };
     
       const removeItem = (itemIndex) => {
         const newBasket = [...basket];
         newBasket.splice(itemIndex, 1);
         setBasket(newBasket);
+        setTotal(calculateTotal(newBasket, pricingRules));
       };
 
     const handleInputChange = (event) => {
