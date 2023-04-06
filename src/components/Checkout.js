@@ -25,20 +25,9 @@ const Checkout = ({ pricingRules }) => {
     setTotal(calculateTotal(newBasket, pricingRules));
   };
 
-  const handleInputChange = (event) => {
-    const newItem = event.target.value.toUpperCase();
-    addItem(newItem);
-    event.target.value = "";
-  };
-
   return (
     <div>
       <h2>Checkout</h2>
-      <input
-        type="text"
-        placeholder="Enter item"
-        onChange={handleInputChange}
-      />
       <div>
         <h3>Basket</h3>
         <ul>

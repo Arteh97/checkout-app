@@ -1,11 +1,12 @@
 import pricingRules from "../data/pricingRules";
 
 const PricingRules = ({ onItemClick }) => {
-    return (
-      <div>
-        <h2>Pricing Rules</h2>
-        <ul>
-          {Object.entries(pricingRules).map(([item, { unitPrice, specialPrice }]) => (
+  return (
+    <div>
+      <h2>Pricing Rules</h2>
+      <ul>
+        {Object.entries(pricingRules).map(
+          ([item, { unitPrice, specialPrice }]) => (
             <li key={item}>
               <span>{item}:</span>
               <span>{unitPrice}p</span>
@@ -16,10 +17,11 @@ const PricingRules = ({ onItemClick }) => {
               ) : null}
               <button onClick={() => onItemClick(item)}>Add to Basket</button>
             </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
+          )
+        )}
+      </ul>
+    </div>
+  );
+};
 
-  export default PricingRules;
+export default PricingRules;
