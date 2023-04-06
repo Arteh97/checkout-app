@@ -1,6 +1,7 @@
 import Checkout from "./components/Checkout";
 import "./App.css";
 import PricingRules from "./components/PricingRules";
+import pricingRules from "./data/pricingRules";
 
 function App() {
   const handleItemClick = (item) => {
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Checkout />
-      <PricingRules onItemClick={handleItemClick} />
+      <PricingRules onItemClick={handleItemClick} pricingRules={pricingRules} />
     </div>
   );
 }

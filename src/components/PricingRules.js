@@ -1,6 +1,6 @@
 import pricingRules from "../data/pricingRules";
 
-const PricingRules = ({ onItemClick }) => {
+const PricingRules = ({ pricingRules, onItemClick }) => {
   return (
     <div>
       <h2>Pricing Rules</h2>
